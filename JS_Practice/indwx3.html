@@ -1,0 +1,53 @@
+<!--轉型-->
+<script>
+    //JavaScript自己轉(建議不要，因為有時候會出現意想不到的錯誤)
+    console.log(233 + '哈哈哈')// 233 哈哈哈 這裡 233(數值) 被隱含轉換為字串
+
+    // Number() 的轉換規則：
+
+    // 常見參數
+    //   1. 數值直接返回
+    //   2. true/false 分別轉換為 1/0 
+    //   3. null 轉換爲 0
+    //   4. undefined 轉換爲 NaN
+
+    // 字串參數
+    //   1. 空字符串返回 0
+    //   2. `Number('011')` 為 11
+    //   3. `Number('01.1')` 為 1.1
+    //   4. 若字串包含上述情況外的字符，返回 NaN
+
+    console.log(Number('011'));
+    console.log(Number('01.1'));
+
+    console.log(Number('123'));// 123
+    Number('     123123123     ');// 123123123
+    console.log(Number('  12313213231231hhhhh'));// NaN
+    Number(' 12313213231231hhhhh123213132  ');// NaN
+    Number('aaa');// NaN
+    console.log(Number('12 213'));// NaN 碰到空白
+
+    //使用 parseInt()：專門用於把字串轉換為整數值。不會像 Number 那樣查看規則
+    // - 排除空格後，如果第一個字符不是數值字符、"+"、"-"，直接返回 NaN ，所以空字串也返回 NaN
+    // - 接著上述規則一次檢測每個字符，如 "1234blue" 會被轉換為 1234
+    // - parseInt() 能識別數據的進制，但是也可以在第二個參數中直接傳遞防止混淆，比如 `parseInt("AF", 16)`，比傳入 16 則會直接失敗
+
+    parseInt('123');// 123
+    console.log(parseInt('   123123123   '))//會除去空白
+    parseInt('  12313213231231hhhhh');
+    console.log(parseInt('  12313213231231hhhhh1232123132'));// 12313213231231
+    parseInt('aa');//NaN
+    console.log(parseInt('12 213'));// 12
+
+</script>
+<!--
+    轉型：
+    強制轉型(coercoin)
+       1.「明確的」強制轉型（explicit coercoin）-> 只要是程式碼中刻意寫出來的型別轉換動作，就是明確的強制轉型
+       2.「隱含的」強制轉型（implicit coercoin）-> 在程式碼中沒有明確指出要轉換型別的轉型，就是隱含的強制轉型
+
+    轉換型別
+    自己下的指令 -> 如：Boolean(), String(), Number(), parseInt() 等等
+                                                    (轉成Int)
+                *凡後面有() -> 方法
+-->

@@ -1,0 +1,35 @@
+<!--互動式宣告-->
+<script>
+    let name = 'John';
+    //變數
+    alert(`Hello, ${name}!`); // Hello, John
+    //表達式
+    alert(`the result is ${1+2}`);
+
+    let age = prompt('How old are you?', 100)
+    //100 -> 這個位置是預設值，如果都沒有輸入就會用100去呈現，可接受空值''
+
+    alert(`You are ${age} years old!`)// You are 100 years old!
+
+    let isBoss = confirm('Are you the boss')
+
+    alert(isBoss);// 如果“確定”按鈕被按下，則顯示 true
+    console.log( isBoss )
+</script>
+<!--
+    互動的函數：
+    1.alert   -> 訊息方塊
+    2.prompt  -> 會prompt 將返回用戶在 input 框內輸入的文本，如果用戶取消了輸入，則返回 null
+              -> 可輸入的對話方塊
+    3.confirm -> 有著“確定”&"取消"的對話方塊
+              -> 布林值
+
+    confirm 函數顯示一個帶有 question 以及確定和取消兩個按鈕的模態窗口，點擊確定返回true，點擊取敲消返回 false。
+
+    例如：
+    
+       let isBoss = confirm("Are you the boss?");
+
+       alert( isBoss );// 如果“確定”按鈕被按下，則顯示 true
+       console.log( isBoss )
+-->
